@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+/****************
+* Global Styles *
+****************/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 35px;
+    color: rgb(41, 41, 41);
+    
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: rgb(250, 225, 193);
+}
+
+
+/******************
+* Clock (General) *
+******************/
+#clock {
+    background-color: rgba(187, 43, 43, 0.9);
+    color: rgb(250, 244, 235);
+    padding: 1rem;
+    border-radius: 50%;
+    padding: 1.2rem;
+    min-width: 14rem;
+    min-height: 13rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+#decorative-top {
+    position: absolute;
+    background-color: black;
+    top: 0;
+    left: 38%;
+    transform: translate(-50%, 0);
+}
+
+#decorative-top span {
+    width: 4rem;
+    height: 0.7rem;
+    position: absolute;
+    background-color: rgb(33, 154, 33);
+    border-radius: 50%;
+}
+
+#decorative-top span:nth-child(1) {
+    transform: rotate(20deg)translate(10%, 0);
+}
+
+#decorative-top span:nth-child(2) {
+    transform: rotate(-20deg) translate(-10%, 0);
+}
+
+#decorative-top span:nth-child(3) {
+    width: 5rem;
+    transform: translate(-10%,0);
+}
+
+#decorative-top span:nth-child(4) {
+    width: 2rem;
+    transform: rotate(90deg) translate(10%,-140%);
+}
+
+#main-title {
+    text-align: center;
+    margin-top: 0.3rem;
+    text-shadow: 0 2px black;
+}
+
+
+/****************
+* Input Section *
+****************/
+#input-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.duration {
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    background-color: rgb(255, 234, 234);
+    border-radius: 50%;
+    color: black;
+}
+
+.input-container button {
+    appearance: none;
+    font-size: 0.7rem;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    line-height: 1rem;
+    border: none;
+    border-radius: 50%;
+}
+
+.input-container button:hover {
+    cursor: pointer;
+}
+
+.decrement {
+    margin-right: -0.2rem;
+    z-index: 998;
+    background-color: rgb(250, 103, 103);
+}
+
+.increment {
+    margin-left: -0.2rem;
+    z-index: 998;
+    background-color: rgb(65, 228, 139);
+}
+
+.length-label {
+    font-size: 1rem;
+    text-align: center;
+    text-shadow: 0 2px black;
+}
+
+
+/****************
+* Timer Section *
+****************/
+#timer {
+    display: flex;
+    justify-content: center;
+}
+
+#timer-label {
+    font-size: 1.4rem;
+    text-align: center;
+    text-shadow: 0 2px black;
+}
+
+#time-left {
+    background-color: rgb(237, 237, 237);
+    color: black;
+    text-align: center;
+    padding: 0.2rem 0.7rem;
+    border-radius: 0.3rem;
+    width: 4rem;
+    font-size: 2rem;
+    padding-bottom: 0.3rem;
+    border: solid rgb(224, 123, 76) 6px;
+    box-shadow: 0 2px black;
+}
+
+
+#timer-ctrl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    margin-top: -0.7rem;
+}
+
+#timer-ctrl button {
+    font-size: 0.8rem;
+    appearance: none;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(224, 123, 76);
+    color: white;
+    box-shadow: 0 2px black;
+}
+
+#timer-ctrl button:hover {
+    cursor: pointer;
+}
+
+/*********
+* Footer *
+*********/
+footer {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    padding: 0.2rem 0.5rem;
+    line-height: 0.6rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+footer a {
+    color: black;
+}
+
+footer a:hover {
+    color: rgba(187, 43, 43);
+}
+
+address {
+    font-style: normal;
+    font-size: 0.6rem;
+}
+
+footer p {
+    font-size: 0.5rem;
+}
+
+
+/*************************
+* Media queries - mobile *
+*************************/
+@media (max-width: 450px) {
+
+    #clock {
+        min-width: 13rem;
+        min-height: 13rem;
+    }
+    
+
+    #input-section {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 390px) {
+    #app {
+        background-color: rgba(187, 43, 43, 0.9);
+        overflow-x: visible;
+    }
+
+    #decorative-top {
+        visibility: hidden;
+    }
+
+    #clock {
+        background-color: rgba(0,0,0,0);
+        min-width: 100vw;
+        margin-top: 0;
+        box-sizing: border-box;
+    }
+    
+    #main-title {
+        line-height: 1.8rem;
+    }
+
+    #input-section {
+        grid-template-columns: auto;
+        gap: 0.2rem;
+    }
+}
+
+/*************
+* Animations *
+*************/
+@keyframes blink {
+    from {
+        color: red;
+    }
+    to {
+        color: black;
+    }
+}
